@@ -1,22 +1,11 @@
-<html>
-    <head>
-        <title>Blog_kg</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Blog.kg</a></h1>
-        </div>
+<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
 
-        <div>
-            <p>published: 20.06.2021, 12:14</p>
-            <h2><a href="">Админка python</a></h2>
-            <p>ModelAdminКласс является представление модели в интерфейсе администратора. Обычно они хранятся в файле, названном admin.pyв вашем приложении. Давайте посмотрим на очень простой пример ModelAdmin.</p>
-        </div>
-
-        <div>
-            <p>published: 20.06.2021, 12:14</p>
-            <h2><a href="">Git</a></h2>
-            <p>Коммит представляет собой состояние репозитория в определенный момент времени. Это похоже на снапшот, к которому мы можем вернуться и увидеть состояние объектов на определенный момент времени.</p>
-        </div>
-    </body>
-</html>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
